@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Toggl Entries for Today</title>
+</head>
+<script src="scripts/jquery-3.3.1.min.js"></script>
+<script lang="javascript">
+
+            $.getJSON("todaysentries", function(data) {
+                var table = $("#entries");
+                table.append("<th>Description</th><th>Start Time</th><th>End Time</th>");
+                $.each(data, function (idx, elem) {
+                    var startDateTime = new Date(elem.start);
+                    var startString = startDateTime.toDateString() + " " + startDateTime.toLocaleTimeString();
+                    var endDateTime = new Date(elem.stop);
+                    var stopString = endDateTime.toDateString() + " " + endDateTime.toLocaleTimeString();
+                    table.append("<tr><td>" + elem.description + "</td><td>" + startString + "</td>   <td>" + stopString + "</td></tr>");
+                });
+            });
+
+</script>
+<style>
+table, th, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 10px;
+}
+</style>
+<body>
+    <table id="entries"></table>
+</body>
+
+</html>
