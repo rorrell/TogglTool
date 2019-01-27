@@ -1,0 +1,10 @@
+{
+  "name": "toggltool",
+  "version": "1.0.0",
+  "description": "Integrates with Toggl",
+  "main": "main.js",
+  "repository": "git@github.com:rorrell/TogglTool.git",
+  "author": "Rachel Orrell <rachel.orrell@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
